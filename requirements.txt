@@ -1,0 +1,5 @@
+vnstock
+pandas
+requests
+python-dateutil
+pytz
