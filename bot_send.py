@@ -298,9 +298,13 @@ def main():
             
         # CASE 5: CHIẾN ĐẤU CHIỀU (13:00 -> 15:00)
         elif 1300 <= current_hm < 1500:
-            for symbol in cp:
-                notification(symbol, df_day_hist, df_minute_hist)
-            # time.sleep(1)
+            for idx, symbol in enumerate(cp, start=1):
+                # Gọi hàm notification
+                notification(symbol, df_day_hist, df_minute_hist, price_threshold=1000)
+                
+                if idx % 50 == 0:
+                    print(f"Đã lấy {idx} mã, tạm nghỉ {time_sleep} giây để tránh giới hạn request...")
+                    time.sleep(time_sleep)
 
         # CASE 6: HẾT GIỜ CHIỀU (>= 15:00) -> TẮT MÁY
         elif current_hm >= 1500:
