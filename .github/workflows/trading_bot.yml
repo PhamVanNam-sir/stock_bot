@@ -3,7 +3,7 @@ name: VN Stock Bot
 on:
   schedule:
     # 01:45 UTC = 08:45 Việt Nam (Thứ 2 đến Thứ 6)
-    - cron: '45 1 * * 1-5'
+    - cron: '20 1 * * 1-5'
   workflow_dispatch: # Cho phép bấm chạy tay để test
 
 jobs:
