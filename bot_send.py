@@ -211,9 +211,9 @@ def download_data():
     end = str(dt.date.today() - dt.timedelta(days=1))
     
     # Tải Minute
-    df_minute = get_stock_price(tickers=cp, start=start, end=end, interval='1m', time_sleep=30)
+    df_minute = get_stock_price(tickers=cp, start=start, end=end, interval='1m', time_sleep=50)
     # Tải Day
-    df_day = get_stock_price(tickers=cp, start=start, end=end, interval='1D', time_sleep=30)
+    df_day = get_stock_price(tickers=cp, start=start, end=end, interval='1D', time_sleep=50)
     
     print("✅ Hoàn tất tải dữ liệu lịch sử!")
     return df_minute, df_day
